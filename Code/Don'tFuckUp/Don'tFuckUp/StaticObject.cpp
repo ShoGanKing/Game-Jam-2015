@@ -24,10 +24,10 @@ StaticObject::~StaticObject()
 
 bool StaticObject::Load()
 {
-    if (!m_Texture.loadFromFile("../Assets/Images/Missing.png")) // ./ current directory, ../ back one
+    if (!m_Texture.loadFromFile("../../../Assets/Models/Missing.png")) // ./ current directory, ../ back one
     {
         // Handle Loading Error
-        m_Texture.loadFromFile("../Assets/Images/Missing.png");
+        m_Texture.loadFromFile("../../../Assets/Models/Missing.png");
     }
 
     m_Sprite.setTexture(m_Texture);

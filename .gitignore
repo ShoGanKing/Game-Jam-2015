@@ -1,1 +1,11 @@
 /Code/Don'tFuckUp/*.suo
+/Code/Don'tFuckUp/Debug/Don'tFuckUp.ilk
+/Code/Don'tFuckUp/Debug/Don'tFuckUp.pdb
+/Code/Don'tFuckUp/Don'tFuckUp/Debug/Don'tFuckUp.tlog/link.command.1.tlog
+/Code/Don'tFuckUp/Don'tFuckUp/Debug/Don'tFuckUp.tlog/link.read.1.tlog
+/Code/Don'tFuckUp/Don'tFuckUp/Debug/Don'tFuckUp.tlog/link.write.1.tlog
+/Code/Don'tFuckUp/Don'tFuckUp/Debug/GameObject.obj
+/Code/Don'tFuckUp/Don'tFuckUp/Debug/MyVec2.obj
+/Code/Don'tFuckUp/Don'tFuckUp/Debug/Scene.obj
+/Code/Don'tFuckUp/Don'tFuckUp/Debug/SceneManager.obj
+/Code/Don'tFuckUp/Don'tFuckUp/Debug/StaticObject.obj
