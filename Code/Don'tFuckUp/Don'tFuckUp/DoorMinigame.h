@@ -5,11 +5,15 @@
 
 class DoorMinigame
 {
+    enum
+    {
+        RIGHTDOOR = 1, //The only right door the player can pick
+        WRONGDOOR1,    //Both of the wrong doors the player can pick
+        WRONGDOOR2     //^^
+    };
+
     //Constants
     const int PLAYER_SPEED = 100.0f;
-    const int PICKED_THE_WRONG_DOOR_1 = 1;
-    const int PICKED_THE_RIGHT_DOOR = 2;
-    const int PICKED_THE_WRONG_DOOR_2 = 3;
     const sf::Time TIME_PER_FRAME = sf::seconds(1.f / 60.f);
 
 public:

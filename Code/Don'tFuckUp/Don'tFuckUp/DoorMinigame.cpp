@@ -81,17 +81,16 @@ void DoorMinigame::Update(sf::Time aDelta)
 
 void DoorMinigame::Render() // Draw()
 {
-    if (m_RandomNumber > PICKED_THE_RIGHT_DOOR)
+    if (m_RandomNumber == RIGHTDOOR)
     {
         m_Text.setString("You win");
     }
-    else if (m_RandomNumber == PICKED_THE_WRONG_DOOR_1 || m_RandomNumber == PICKED_THE_WRONG_DOOR_2)
+    else if (m_RandomNumber == WRONGDOOR1 || m_RandomNumber == WRONGDOOR2)
     {
         m_Text.setString("You lose");
     }
     m_Text.setFont(m_Font);
     m_Text.setCharacterSize(300);
-    //m_Text.move(500.0f, 500.0f);
     m_Window.clear();
     m_Window.draw(m_Player);
     m_Window.draw(m_Text);

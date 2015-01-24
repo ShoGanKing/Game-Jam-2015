@@ -1,30 +1,20 @@
-﻿Build started 1/24/2015 2:43:57 PM.
-     1>Project "C:\Users\pren0029\Desktop\Game 12pm\Game-Jam-2015\Code\Don'tFuckUp\Don'tFuckUp\Don'tFuckUp.vcxproj" on node 2 (Build target(s)).
+﻿Build started 1/24/2015 3:32:44 PM.
+     1>Project "C:\Users\paiv0005\Desktop\stuff\trunk\Code\Don'tFuckUp\Don'tFuckUp\Don'tFuckUp.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\Don'tFuckUp\Don'tFuckUp\Game - Copy.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\Game.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\GameObject.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\Main.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\MyVec2.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\Scene.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\SceneManager.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\StaticObject.cpp"
-         StaticObject.cpp
-         SceneManager.cpp
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\scenemanager.cpp(62): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\scenemanager.cpp(74): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\scenemanager.cpp(85): warning C4018: '<' : signed/unsigned mismatch
-         Scene.cpp
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\scene.cpp(63): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\scene.cpp(75): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\scene.cpp(86): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\scene.cpp(98): warning C4018: '<' : signed/unsigned mismatch
-         MyVec2.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\Don'tFuckUp\Don'tFuckUp\DoorMinigame.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\Game.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\Main.cpp"
          Main.cpp
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\game.h(9): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\game - copy.h(11): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
-         GameObject.cpp
+     1>c:\users\paiv0005\desktop\stuff\trunk\code\don'tfuckup\don'tfuckup\game.h(9): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
+     1>c:\users\paiv0005\desktop\stuff\trunk\code\don'tfuckup\don'tfuckup\game - copy.h(11): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
          Game.cpp
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\game.h(9): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\game.cpp(27): warning C4390: ';' : empty controlled statement found; is this the intent?
-         Game - Copy.cpp
-     1>c:\users\pren0029\desktop\game 12pm\game-jam-2015\code\don'tfuckup\don'tfuckup\game - copy.h(11): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
+     1>c:\users\paiv0005\desktop\stuff\trunk\code\don'tfuckup\don'tfuckup\game.h(9): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
+     1>c:\users\paiv0005\desktop\stuff\trunk\code\don'tfuckup\don'tfuckup\game.cpp(27): warning C4390: ';' : empty controlled statement found; is this the intent?
+         DoorMinigame.cpp
+     1>c:\users\paiv0005\desktop\stuff\trunk\code\don'tfuckup\don'tfuckup\doorminigame.h(16): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
+     1>c:\users\paiv0005\desktop\stuff\trunk\code\don'tfuckup\don'tfuckup\doorminigame.cpp(129): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
          Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\pren0029\Desktop\Game 12pm\Game-Jam-2015\Code\Don'tFuckUp\Debug\Don'tFuckUp.exe" /INCREMENTAL /NOLOGO "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\pren0029\Desktop\Game 12pm\Game-Jam-2015\Code\Don'tFuckUp\Debug\Don'tFuckUp.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\pren0029\Desktop\Game 12pm\Game-Jam-2015\Code\Don'tFuckUp\Debug\Don'tFuckUp.lib" /MACHINE:X86 "Debug\Game - Copy.obj"
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\paiv0005\Desktop\stuff\trunk\Code\Don'tFuckUp\Debug\Don'tFuckUp.exe" /INCREMENTAL /NOLOGO "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\paiv0005\Desktop\stuff\trunk\Code\Don'tFuckUp\Debug\Don'tFuckUp.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\paiv0005\Desktop\stuff\trunk\Code\Don'tFuckUp\Debug\Don'tFuckUp.lib" /MACHINE:X86 Debug\DoorMinigame.obj
+         "Debug\Game - Copy.obj"
          Debug\Game.obj
          Debug\GameObject.obj
          Debug\Main.obj
@@ -32,10 +22,9 @@
          Debug\Scene.obj
          Debug\SceneManager.obj
          Debug\StaticObject.obj
-         LINK : C:\Users\pren0029\Desktop\Game 12pm\Game-Jam-2015\Code\Don'tFuckUp\Debug\Don'tFuckUp.exe not found or not built by the last incremental link; performing full link
-         Don'tFuckUp.vcxproj -> C:\Users\pren0029\Desktop\Game 12pm\Game-Jam-2015\Code\Don'tFuckUp\Debug\Don'tFuckUp.exe
-     1>Done Building Project "C:\Users\pren0029\Desktop\Game 12pm\Game-Jam-2015\Code\Don'tFuckUp\Don'tFuckUp\Don'tFuckUp.vcxproj" (Build target(s)).
+         Don'tFuckUp.vcxproj -> C:\Users\paiv0005\Desktop\stuff\trunk\Code\Don'tFuckUp\Debug\Don'tFuckUp.exe
+     1>Done Building Project "C:\Users\paiv0005\Desktop\stuff\trunk\Code\Don'tFuckUp\Don'tFuckUp\Don'tFuckUp.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.62
+Time Elapsed 00:00:02.02
