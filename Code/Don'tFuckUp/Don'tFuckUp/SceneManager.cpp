@@ -23,12 +23,16 @@ SceneManager::~SceneManager()
 
 void SceneManager::Push()
 {
-    m_SceneList.push_back(new Scene());
+    m_SceneList.push_back(new Scene(m_Window));
 }
 
-void SceneManager::Pop()
+void SceneManager::Pop(unsigned short aNumPops)
 {
-
+    for (int i = 0; i < aNumPops; i++)
+    {
+        delete m_SceneList.back();
+        m_SceneList.pop_back();
+    }
 }
 
 sf::RenderWindow* SceneManager::MyWindow()

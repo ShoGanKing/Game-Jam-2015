@@ -3,14 +3,14 @@
 #include "MyVec2.h"
 #include "Scene.h"
 
-StaticObject::StaticObject(sf::RenderWindow* aWindow) : GameObject(MyVec2(100.0f, 100.0f))
+StaticObject::StaticObject(sf::RenderWindow* aWindow) : GameObject(MyVec2(100.0f, 100.0f), "Static")
 {
     m_Scene = nullptr;
     m_Window = aWindow;
     m_Active = true;
 }
 
-StaticObject::StaticObject(Scene* aScene, MyVec2 aPos, float aAngle) : GameObject(aPos, aAngle)
+StaticObject::StaticObject(Scene* aScene, MyVec2 aPos, float aAngle) : GameObject(aPos, "Static", aAngle)
 {
     m_Scene = aScene;
 

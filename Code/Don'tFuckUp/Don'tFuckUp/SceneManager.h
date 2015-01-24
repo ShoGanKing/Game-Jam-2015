@@ -1,7 +1,7 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
-#include <vector>
 
+#include <vector>
 #include <SFML/Graphics.hpp>
 
 class Scene;
@@ -13,7 +13,7 @@ public:
     ~SceneManager();
 
     void Push();
-    void Pop();
+    void Pop(unsigned short aNumPops = 1);
 
     sf::RenderWindow* MyWindow();
 

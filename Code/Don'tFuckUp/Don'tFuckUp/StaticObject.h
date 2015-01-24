@@ -24,8 +24,6 @@ private:
 
     Scene* m_Scene;
 
-    sf::RenderWindow* m_Window;
-
     sf::Texture m_Texture;
     sf::Sprite m_Sprite;
 };

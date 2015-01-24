@@ -1,7 +1,7 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject(MyVec2 aPos, float aAngle)
+GameObject::GameObject(MyVec2 aPos, std::string aType, float aAngle)
 {
     m_Position = aPos;
     m_Angle = aAngle;
@@ -17,4 +17,14 @@ GameObject::~GameObject()
 bool GameObject::IsActive()
 { 
     return m_Active; 
+}
+
+void GameObject::SetIsActive(bool aActive)
+{
+    m_Active = aActive;
+}
+
+std::string GameObject::GetType()
+{
+    return m_Type;
 }

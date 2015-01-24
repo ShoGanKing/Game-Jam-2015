@@ -2,6 +2,7 @@
 #define SCENE_H
 
 #include <vector>
+#include <SFML/Graphics.hpp>
 
 class GameObject;
 
@@ -19,16 +20,25 @@ enum SceneType
 class Scene
 {
 public:
-    Scene();
-    ~Scene();
-    
+    Scene(sf::RenderWindow* aWindow);
+    ~Scene();  
 
     bool IsActive(){ return m_Active; }
+    void SetIsActive(bool aActive);
+
+    void AddGameObject(GameObject* aObject);
+    void RemoveGameObjectType(std::string aType);
+    void RemoveGameObjectAtIndex(unsigned int aIndex);
+
+    virtual bool Load();
+    virtual void Update();
+    virtual void Draw();
+
 
 private:
     bool m_Active;
 
-
+    sf::RenderWindow* m_Window;
 
     std::vector<GameObject*> m_Objects;
 

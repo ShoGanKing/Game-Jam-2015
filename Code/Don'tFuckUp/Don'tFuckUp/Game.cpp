@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game() : m_Window(sf::VideoMode(640, 480),
+Game::Game() : m_Window(sf::VideoMode(1600, 900),
     "SFML Application"),
     m_Texture(),
     m_Player(),
