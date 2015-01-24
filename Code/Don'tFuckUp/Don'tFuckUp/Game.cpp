@@ -1,19 +1,45 @@
 #include "Game.h"
+#include <sstream>
+
+using namespace std;
 
 Game::Game() : m_Window(sf::VideoMode(1600, 900),
     "SFML Application"),
     m_Texture(),
     m_Player(),
+    m_Font(),
+    m_Mash(),
     m_IsMovingDown(false),
     m_IsMovingUp(false),
     m_IsMovingLeft(false),
-    m_IsMovingRight(false)
+    m_IsMovingRight(false),
+    m_numMash(0),
+    m_timer(240),
+    m_Timer(),
+    m_WinLose()
 {
     if (!m_Texture.loadFromFile("../../../Assets/Models/Vivi.png")) // ./ current directory, ../ back one
     {
         // Handle Loading Error
     }
 
+    if (!m_Font.loadFromFile("../../../Assets/Arial.ttf"));
+    {
+
+    }
+
+
+    m_Mash.setFont(m_Font);
+    m_Mash.setCharacterSize(500);
+    m_Mash.setPosition(-100,-100);
+
+    m_WinLose.setFont(m_Font);
+    m_WinLose.setCharacterSize(500);
+    m_WinLose.setPosition(0, 300);
+
+    m_Timer.setFont(m_Font);
+    m_Timer.setCharacterSize(500);
+    m_Timer.setPosition(100, 200);
 
     m_Player.setTexture(m_Texture);
     m_Player.setPosition(100.0f, 100.0f);
@@ -46,6 +72,7 @@ void Game::ProcessEvents() // Input()
         {
         case sf::Event::KeyPressed:
             HandlePlayerInput(event.key.code, true);
+            m_numMash++;
             break;
         case sf::Event::KeyReleased:
             HandlePlayerInput(event.key.code, false);
@@ -78,6 +105,39 @@ void Game::Update(sf::Time aDelta)
     {
         movement.x += PLAYER_SPEED;
     }
+   
+    if (m_timer != 0)
+    {
+        m_timer--;
+
+        if (m_timer == 0)
+        {
+            if (m_numMash != 100)
+            {
+                m_WinLose.setString("You Lose!");
+            }
+
+            else
+            {
+                m_WinLose.setString("You Win!");
+            }
+        }
+    }
+
+    stringstream ss;
+    stringstream tt;
+
+    tt << m_timer;
+
+    string std = tt.str();
+
+    m_Timer.setString(std);
+
+    ss << m_numMash;
+
+    string str = ss.str();
+
+    m_Mash.setString(str);
 
     m_Player.move(movement * aDelta.asSeconds());
 } // end of Update(sf::Time aDelta)
@@ -86,6 +146,9 @@ void Game::Render() // Draw()
 {
     m_Window.clear();
     m_Window.draw(m_Player);
+    m_Window.draw(m_Mash);
+    m_Window.draw(m_Timer);
+    m_Window.draw(m_WinLose);
     m_Window.display();
 } // end of Render()
 
