@@ -1,7 +1,8 @@
 #include "Game.h"
+#include "Game - Copy.h"
 
 int main()
 {
-    Game game;
+    GameCopy game;
     game.Run();
 }

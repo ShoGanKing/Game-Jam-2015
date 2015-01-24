@@ -6,16 +6,6 @@
 
 class GameObject;
 
-enum SceneType
-{
-    Scene_MainMenu = 0,
-    Scene_PauseMenu,
-    Scene_FailMenu,
-    Scene_BetweenMenu,
-    Scene_MiniGame,
-    Scene_Type_Count
-};
-
 
 class Scene
 {
@@ -30,8 +20,10 @@ public:
     void RemoveGameObjectType(std::string aType);
     void RemoveGameObjectAtIndex(unsigned int aIndex);
 
+    sf::RenderWindow* GetWindow();
+
     virtual bool Load();
-    virtual void Update();
+    virtual void Update(sf::Time aDelta);
     virtual void Draw();
 
 

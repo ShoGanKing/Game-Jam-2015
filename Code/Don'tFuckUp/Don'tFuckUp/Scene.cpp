@@ -9,7 +9,14 @@ Scene::Scene(sf::RenderWindow* aWindow)
 }
 Scene::~Scene()
 {
-
+    if (!m_Objects.empty())
+    {
+        for (int i = m_Objects.size() - 1; i >= 0; i--)
+        {
+            delete m_Objects[i];
+            m_Objects.pop_back();
+        }
+    }
 }
 
 void Scene::AddGameObject(GameObject* aObject)
@@ -19,12 +26,34 @@ void Scene::AddGameObject(GameObject* aObject)
 
 void Scene::RemoveGameObjectType(std::string aType)
 {
-
+    if (!m_Objects.empty())
+    {
+        for (int i = m_Objects.size() - 1; i >= 0; i--)
+        {
+            if (m_Objects[i]->GetType() == aType)
+            {
+                delete m_Objects[i];
+                m_Objects.erase(m_Objects.begin() + i);
+            }
+        }
+    }
 }
 
 void Scene::RemoveGameObjectAtIndex(unsigned int aIndex)
 {
+    if (!m_Objects.empty())
+    {
+        if (m_Objects.size() > aIndex)
+        {
+            delete m_Objects[aIndex];
+            m_Objects.erase(m_Objects.begin() + aIndex);
+        }
+    }
+}
 
+sf::RenderWindow* Scene::GetWindow()
+{
+    return m_Window;
 }
 
 bool Scene::Load()
@@ -39,13 +68,13 @@ bool Scene::Load()
     return true;
 }
 
-void Scene::Update()
+void Scene::Update(sf::Time aDelta)
 {
     if (!m_Objects.empty())
     {
         for (int i = 0; i < m_Objects.size(); i++)
         {
-            m_Objects[i]->Update(0.0);
+            m_Objects[i]->Update(aDelta);
         }
     }
 }

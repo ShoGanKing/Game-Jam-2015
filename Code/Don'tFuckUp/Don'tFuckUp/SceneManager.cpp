@@ -12,26 +12,80 @@ SceneManager::SceneManager() :
 
 SceneManager::~SceneManager()
 {
-
+    if (!m_SceneList.empty())
     for (int i = m_SceneList.size() - 1; i >= 0; i--)
     {
         delete m_SceneList[i];
         m_SceneList.pop_back();
     }
-
 }
 
-void SceneManager::Push()
+void SceneManager::Push(Scene* aScene)
 {
-    m_SceneList.push_back(new Scene(m_Window));
+    if (!m_SceneList.empty())
+    {
+        m_SceneList.back()->SetIsActive(false);
+    }
+
+    m_SceneList.push_back(aScene);
 }
 
 void SceneManager::Pop(unsigned short aNumPops)
 {
-    for (int i = 0; i < aNumPops; i++)
+    if (!m_SceneList.empty())
     {
-        delete m_SceneList.back();
-        m_SceneList.pop_back();
+        if (m_SceneList.size() > aNumPops)
+        {
+            for (int i = 0; i < aNumPops; i++)
+            {
+                delete m_SceneList.back();
+                m_SceneList.pop_back();
+            }
+            m_SceneList.back()->SetIsActive(true);
+        }
+        else
+        {
+            for (int i = m_SceneList.size() - 1; i >= 0; i--)
+            {
+                delete m_SceneList[i];
+                m_SceneList.pop_back();
+            }
+        }
+
+    }
+}
+
+bool SceneManager::Load()
+{
+    if (!m_SceneList.empty())
+    {
+        for (int i = 0; i < m_SceneList.size(); i++)
+        {
+            m_SceneList[i]->Load();
+        }
+    }
+    return true;
+}
+
+void SceneManager::Update(sf::Time aDelta)
+{
+    if (!m_SceneList.empty())
+    {
+        for (int i = 0; i < m_SceneList.size(); i++)
+        {
+            m_SceneList[i]->Update(aDelta);
+        }
+    }
+}
+
+void SceneManager::Draw()
+{
+    if (!m_SceneList.empty())
+    {
+        for (int i = 0; i < m_SceneList.size(); i++)
+        {
+            m_SceneList[i]->Draw();
+        }
     }
 }
 

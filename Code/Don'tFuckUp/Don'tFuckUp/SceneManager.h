@@ -12,8 +12,12 @@ public:
     SceneManager();
     ~SceneManager();
 
-    void Push();
+    void Push(Scene* aScene);
     void Pop(unsigned short aNumPops = 1);
+
+    bool Load();
+    void Update(sf::Time aDelta);
+    void Draw();
 
     sf::RenderWindow* MyWindow();
 

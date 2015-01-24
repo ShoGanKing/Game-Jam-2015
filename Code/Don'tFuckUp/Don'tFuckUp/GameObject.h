@@ -17,7 +17,7 @@ public:
 
     virtual bool Load() = 0;
 
-    virtual void Update(double aDelta) = 0;
+    virtual void Update(sf::Time aDelta) = 0;
     virtual void Draw() = 0;
 
 protected:

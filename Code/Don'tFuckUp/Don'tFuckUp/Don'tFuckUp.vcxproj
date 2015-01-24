@@ -73,6 +73,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game - Copy.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\GameObject.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Main.cpp" />
@@ -82,6 +83,7 @@
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game - Copy.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\GameObject.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\MyVec2.h" />
