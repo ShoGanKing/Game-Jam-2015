@@ -1,6 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "Scene.h"
+#include "StaticObject.h"
 #include <SFML/Graphics.hpp>
 
 class Game
@@ -23,12 +25,19 @@ private:
     sf::RenderWindow m_Window;
     sf::Texture m_Texture;
     sf::Sprite m_Player;
+    sf::Font m_Font;
+    sf::Text m_Mash;
+    sf::Text m_Timer;
+    sf::Text m_WinLose;
 
     // Member Variables
     bool m_IsMovingUp;
     bool m_IsMovingDown;
     bool m_IsMovingLeft;
     bool m_IsMovingRight;
+
+    int m_numMash;
+    int m_timer;
 
 };
 
