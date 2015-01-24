@@ -24,6 +24,7 @@ private:
     sf::Texture m_Texture;
     sf::Sprite m_Player;
 
+
     // Member Variables
     bool m_IsMovingUp;
     bool m_IsMovingDown;

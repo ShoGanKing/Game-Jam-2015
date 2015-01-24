@@ -13,3 +13,8 @@ GameObject::~GameObject()
 {
 
 }
+
+bool GameObject::IsActive()
+{ 
+    return m_Active; 
+}

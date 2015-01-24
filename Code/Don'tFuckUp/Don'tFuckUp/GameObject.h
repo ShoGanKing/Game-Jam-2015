@@ -10,7 +10,7 @@ public:
     GameObject( MyVec2 aPos, float aAngle = 0.0f );
     ~GameObject();
 
-    bool IsActive(){ return m_Active; }
+    bool IsActive();
 
     virtual bool Load() = 0;
 

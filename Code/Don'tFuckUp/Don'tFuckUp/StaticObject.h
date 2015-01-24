@@ -9,6 +9,7 @@ class Scene;
 class StaticObject : public GameObject
 {
 public:
+    StaticObject(sf::RenderWindow* aWindow);
     StaticObject(Scene* aScene, MyVec2 aPos = MyVec2(0.0f,0.0f), float aAngle = 0.0f);
     ~StaticObject();
 
@@ -16,6 +17,8 @@ public:
 
     virtual void Update(double aDelta);
     virtual void Draw();
+
+    sf::Sprite MySprite(){ return m_Sprite; }
 
 private:
 

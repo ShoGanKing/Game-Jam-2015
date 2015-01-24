@@ -78,6 +78,7 @@
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Main.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\MyVec2.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Scene.cpp" />
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\SceneManager.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +86,7 @@
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\GameObject.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\MyVec2.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Scene.h" />
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\SceneManager.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

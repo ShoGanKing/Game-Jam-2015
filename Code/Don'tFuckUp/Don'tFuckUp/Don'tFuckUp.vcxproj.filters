@@ -33,6 +33,9 @@
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\SceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\SceneManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
