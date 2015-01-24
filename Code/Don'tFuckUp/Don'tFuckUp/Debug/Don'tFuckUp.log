@@ -1,19 +1,9 @@
-﻿Build started 1/23/2015 8:23:04 PM.
-     1>Project "C:\Users\le000113\Desktop\Hello\trunk\Code\Don'tFuckUp\Don'tFuckUp\Don'tFuckUp.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\Don'tFuckUp\Don'tFuckUp\Game.cpp" "..\..\Don'tFuckUp\Don'tFuckUp\Main.cpp"
-         Main.cpp
-     1>c:\users\le000113\desktop\hello\trunk\code\don'tfuckup\don'tfuckup\game.h(9): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
-         Game.cpp
-     1>c:\users\le000113\desktop\hello\trunk\code\don'tfuckup\don'tfuckup\game.h(9): warning C4244: 'initializing' : conversion from 'float' to 'const int', possible loss of data
-         Generating Code...
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\le000113\Desktop\Hello\trunk\Code\Don'tFuckUp\Debug\Don'tFuckUp.exe" /INCREMENTAL /NOLOGO "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\le000113\Desktop\Hello\trunk\Code\Don'tFuckUp\Debug\Don'tFuckUp.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\le000113\Desktop\Hello\trunk\Code\Don'tFuckUp\Debug\Don'tFuckUp.lib" /MACHINE:X86 Debug\Game.obj
-         Debug\Main.obj
-         LINK : C:\Users\le000113\Desktop\Hello\trunk\Code\Don'tFuckUp\Debug\Don'tFuckUp.exe not found or not built by the last incremental link; performing full link
-         Don'tFuckUp.vcxproj -> C:\Users\le000113\Desktop\Hello\trunk\Code\Don'tFuckUp\Debug\Don'tFuckUp.exe
-     1>Done Building Project "C:\Users\le000113\Desktop\Hello\trunk\Code\Don'tFuckUp\Don'tFuckUp\Don'tFuckUp.vcxproj" (Build target(s)).
+﻿Build started 1/23/2015 8:43:32 PM.
+     1>Project "C:\Users\vass0015\Desktop\Butts\Game-Jam-2015\Code\Don'tFuckUp\Don'tFuckUp\Don'tFuckUp.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         Don'tFuckUp.vcxproj -> C:\Users\vass0015\Desktop\Butts\Game-Jam-2015\Code\Don'tFuckUp\Debug\Don'tFuckUp.exe
+     1>Done Building Project "C:\Users\vass0015\Desktop\Butts\Game-Jam-2015\Code\Don'tFuckUp\Don'tFuckUp\Don'tFuckUp.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.32
+Time Elapsed 00:00:00.09

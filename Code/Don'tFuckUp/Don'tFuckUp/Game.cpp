@@ -9,7 +9,7 @@ Game::Game() : m_Window(sf::VideoMode(640, 480),
     m_IsMovingLeft(false),
     m_IsMovingRight(false)
 {
-    if (!m_Texture.loadFromFile("./../Assets/Images/Vivi.png")) // ./ current directory, ../ back one
+    if (!m_Texture.loadFromFile("../Assets/Images/Vivi.png")) // ./ current directory, ../ back one
     {
         // Handle Loading Error
     }
