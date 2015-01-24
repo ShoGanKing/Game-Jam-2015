@@ -5,7 +5,7 @@
 
 class GameObject;
 
-enum Scene_Type
+enum SceneType
 {
     Scene_MainMenu = 0,
     Scene_PauseMenu,
@@ -27,6 +27,8 @@ public:
 
 private:
     bool m_Active;
+
+
 
     std::vector<GameObject*> m_Objects;
 

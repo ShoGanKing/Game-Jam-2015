@@ -1,10 +1,13 @@
 #include"SceneManager.h"
+
 #include"Scene.h"
+
+#include <SFML/Graphics.hpp>
 
 SceneManager::SceneManager() :
     m_ActiveSceneIndex(0)
 {
-    
+   
 }
 
 SceneManager::~SceneManager()
@@ -20,10 +23,15 @@ SceneManager::~SceneManager()
 
 void SceneManager::Push()
 {
-
+    m_SceneList.push_back(new Scene());
 }
 
 void SceneManager::Pop()
 {
 
+}
+
+sf::RenderWindow* SceneManager::MyWindow()
+{
+    return m_Window;
 }
