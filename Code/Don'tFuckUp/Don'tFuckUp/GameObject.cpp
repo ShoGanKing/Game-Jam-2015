@@ -1,7 +1,7 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject(MyVec2 aPos, MyVec2 aAngle)
+GameObject::GameObject(MyVec2 aPos, float aAngle)
 {
     m_Position = aPos;
     m_Angle = aAngle;

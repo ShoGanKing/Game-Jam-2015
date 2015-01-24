@@ -4,10 +4,12 @@
 #include <SFML/Graphics.hpp>
 #include "GameObject.h"
 
+class Scene;
+
 class StaticObject : public GameObject
 {
 public:
-    StaticObject();
+    StaticObject(Scene* aScene, MyVec2 aPos = MyVec2(0.0f,0.0f), float aAngle = 0.0f);
     ~StaticObject();
 
     virtual bool Load();
@@ -17,8 +19,12 @@ public:
 
 private:
 
+    Scene* m_Scene;
+
+    sf::RenderWindow* m_Window;
+
     sf::Texture m_Texture;
-    sf::Sprite m_Player;
+    sf::Sprite m_Sprite;
 };
 
 #endif

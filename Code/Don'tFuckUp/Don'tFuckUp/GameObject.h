@@ -7,7 +7,7 @@
 class GameObject
 {
 public:
-    GameObject( MyVec2 aPos, MyVec2 aAngle = MyVec2(0.0, 1.0) );
+    GameObject( MyVec2 aPos, float aAngle = 0.0f );
     ~GameObject();
 
     bool IsActive(){ return m_Active; }
@@ -17,8 +17,8 @@ public:
     virtual void Update(double aDelta) = 0;
     virtual void Draw() = 0;
 
-private:
-    MyVec2 m_Angle;
+protected:
+    float m_Angle;
     MyVec2 m_Position;
 
     bool m_Active;
