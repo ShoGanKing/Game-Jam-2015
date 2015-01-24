@@ -1,4 +1,4 @@
-1. download sfml for c++ 12 32bit
+1. download sfml for c++ 12 32bit 
 http://www.sfml-dev.org/download/sfml/2.2/
 
 2. configuration to all configs
