@@ -16,6 +16,9 @@ Game::Game() : m_Window(sf::VideoMode(1600, 900),
     {
         // Handle Loading Error
     }
+
+    m_Player.setTexture(m_Texture);
+    m_Player.setPosition(100.0f, 100.0f);
 } // end of Game()
 
 void Game::Run()

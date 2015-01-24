@@ -42,10 +42,14 @@
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DoorMinigame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DDRClone.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.cpp">
+=======
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Mash.cpp">
+>>>>>>> 6d2932eb77febde1631794741574fbd76f86b87f
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,10 +78,14 @@
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DoorMinigame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DDRClone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.h">
+=======
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Mash.h">
+>>>>>>> 6d2932eb77febde1631794741574fbd76f86b87f
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
