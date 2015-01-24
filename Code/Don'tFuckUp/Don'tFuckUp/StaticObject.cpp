@@ -1,5 +1,4 @@
 #include "StaticObject.h"
-#include "GameObject.h"
 #include "MyVec2.h"
 #include "Scene.h"
 

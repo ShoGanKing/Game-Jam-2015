@@ -2,7 +2,7 @@
 #define GAMEOBJECT_H
 
 #include <SFML/Graphics.hpp>
-#include "MyVec2.h"
+#include"MyVec2.h"
 
 class GameObject
 {
@@ -15,8 +15,13 @@ public:
 
     std::string GetType();
 
-    virtual bool Load() = 0;
+    MyVec2 GetPosition();
+    void SetPosition(MyVec2 aPosition);
 
+    float GetAngle();
+    void SetAngle(float aAngle);
+
+    virtual bool Load() = 0;
     virtual void Update(sf::Time aDelta) = 0;
     virtual void Draw() = 0;
 

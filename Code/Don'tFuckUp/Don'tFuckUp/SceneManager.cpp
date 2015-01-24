@@ -4,10 +4,10 @@
 
 #include <SFML/Graphics.hpp>
 
-SceneManager::SceneManager() :
+SceneManager::SceneManager(sf::RenderWindow* aWindow) :
     m_ActiveSceneIndex(0)
 {
-   
+    m_Window = aWindow;
 }
 
 SceneManager::~SceneManager()
@@ -92,4 +92,16 @@ void SceneManager::Draw()
 sf::RenderWindow* SceneManager::MyWindow()
 {
     return m_Window;
+}
+
+void SceneManager::HandleInputEvent(Input_Events aEvent)
+{
+    if (!m_SceneList.empty())
+    {
+        for (int i = 0; i < m_SceneList.size(); i++)
+        {
+            m_SceneList[i]->HandleInputEvent(aEvent);
+        }
+    }
+
 }

@@ -1,10 +1,11 @@
 #include "Scene.h"
 #include "GameObject.h"
+#include "SceneManager.h"
 
-
-Scene::Scene(sf::RenderWindow* aWindow)
+Scene::Scene(SceneManager* aManager)
 {
-    m_Window = aWindow;
+    m_Manager = aManager;
+    m_Window = m_Manager->MyWindow();
     m_Active = true;
 }
 Scene::~Scene()
@@ -17,6 +18,18 @@ Scene::~Scene()
             m_Objects.pop_back();
         }
     }
+}
+
+void Scene::SetIsActive(bool aActive)
+{
+    if (!m_Objects.empty())
+    {
+        for (int i = 0; i < m_Objects.size(); i++)
+        {
+            m_Objects[i]->SetIsActive(aActive);
+        }
+    }
+
 }
 
 void Scene::AddGameObject(GameObject* aObject)
@@ -56,6 +69,11 @@ sf::RenderWindow* Scene::GetWindow()
     return m_Window;
 }
 
+SceneManager* Scene::GetSceneManager()
+{
+    return m_Manager;
+}
+
 bool Scene::Load()
 {
     if (!m_Objects.empty())
@@ -91,14 +109,13 @@ void Scene::Draw()
 
 }
 
-void Scene::SetIsActive(bool aActive)
+void Scene::HandleInputEvent(Input_Events aEvent)
 {
-    if (!m_Objects.empty())
+    if (IsActive)
     {
-        for (int i = 0; i < m_Objects.size(); i++)
-        {
-            m_Objects[i]->SetIsActive(aActive);
-        }
-    }
 
+
+
+
+    }
 }

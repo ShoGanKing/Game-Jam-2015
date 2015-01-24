@@ -9,7 +9,7 @@ class Scene;
 class SceneManager
 {
 public:
-    SceneManager();
+    SceneManager(sf::RenderWindow* aWindow);
     ~SceneManager();
 
     void Push(Scene* aScene);
@@ -20,6 +20,8 @@ public:
     void Draw();
 
     sf::RenderWindow* MyWindow();
+
+    void HandleInputEvent(Input_Events aEvent);
 
 private:
     unsigned short m_ActiveSceneIndex;
