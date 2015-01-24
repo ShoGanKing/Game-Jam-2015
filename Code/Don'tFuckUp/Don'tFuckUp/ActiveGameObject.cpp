@@ -46,3 +46,19 @@ void ActiveGameObject::Draw()
         m_Window->draw(m_Sprite);
     }
 }
+
+void ActiveGameObject::SetPosition(MyVec2 aPosition)
+{
+    m_Position = aPosition;
+    m_Sprite.setPosition(aPosition.X(), aPosition.Y());
+}
+
+MyVec2 ActiveGameObject::GetVelocity()
+{
+    return m_Velocity;
+}
+
+void ActiveGameObject::SetVelocity(MyVec2 aVelocity)
+{
+    m_Velocity = aVelocity;
+}

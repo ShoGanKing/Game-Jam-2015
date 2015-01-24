@@ -17,6 +17,8 @@ public:
     virtual void Update(sf::Time aDelta);
     virtual void Draw();
 
+    void SetPosition(MyVec2 aPosition);
+
     MyVec2 GetVelocity();
     void SetVelocity(MyVec2 aVelocity);
 

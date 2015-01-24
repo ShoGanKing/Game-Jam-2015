@@ -16,7 +16,7 @@ public:
     std::string GetType();
 
     MyVec2 GetPosition();
-    void SetPosition(MyVec2 aPosition);
+    virtual void SetPosition(MyVec2 aPosition);
 
     float GetAngle();
     void SetAngle(float aAngle);

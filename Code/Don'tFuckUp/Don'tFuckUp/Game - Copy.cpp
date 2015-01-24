@@ -88,44 +88,44 @@ void GameCopy::HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
     {
         if (aIsPressed)
         {
-
+            m_SceneManager->HandleInputEvent(Key_Down_W);
         }
         else
         {
-
+            m_SceneManager->HandleInputEvent(Key_Up_W);
         }
     }
     else if (aKey == sf::Keyboard::S)
     {
         if (aIsPressed)
         {
-
+            m_SceneManager->HandleInputEvent(Key_Down_S);
         }
         else
         {
-
+            m_SceneManager->HandleInputEvent(Key_Up_S);
         }
     }
     else if (aKey == sf::Keyboard::A)
     {
         if (aIsPressed)
         {
-
+            m_SceneManager->HandleInputEvent(Key_Down_A);
         }
         else
         {
-
+            m_SceneManager->HandleInputEvent(Key_Up_A);
         }
     }
     else if (aKey == sf::Keyboard::D)
     {
         if (aIsPressed)
         {
-
+            m_SceneManager->HandleInputEvent(Key_Down_D);
         }
         else
         {
-
+            m_SceneManager->HandleInputEvent(Key_Up_D);
         }
     }
 } // end of HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)

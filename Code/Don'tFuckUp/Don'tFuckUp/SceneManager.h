@@ -4,6 +4,8 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
+enum Input_Events;
+
 class Scene;
 
 class SceneManager

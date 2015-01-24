@@ -111,11 +111,37 @@ void Scene::Draw()
 
 void Scene::HandleInputEvent(Input_Events aEvent)
 {
-    if (IsActive)
+    if (IsActive())
     {
-
-
-
-
+        switch (aEvent)
+        {
+        case Key_Down_A:
+            if (!m_Objects.empty())
+            {
+                for (int i = 0; i < m_Objects.size(); i++)
+                {
+                    m_Objects[i]->SetPosition(MyVec2(0.0f,100.0f));
+                }
+            }
+            break;
+        case Key_Down_D:
+            if (!m_Objects.empty())
+            {
+                for (int i = 0; i < m_Objects.size(); i++)
+                {
+                    m_Objects[i]->SetPosition(MyVec2(200.0f, 100.0f));
+                }
+            }
+            break;
+        default:
+            if (!m_Objects.empty())
+            {
+                for (int i = 0; i < m_Objects.size(); i++)
+                {
+                    m_Objects[i]->SetPosition(MyVec2(100.0f, 100.0f));
+                }
+            }
+            break;
+        }
     }
 }
