@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Kayh0002\Desktop\SFML-2.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Kayh0002\Desktop\SFML-2.2\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SFML-2.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SFML-2.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\Users\Kayh0002\Desktop\SFML-2.2\include;$(IncludePath)</IncludePath>
@@ -74,10 +74,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.cpp" />
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\GameObject.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Main.cpp" />
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\MyVec2.cpp" />
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Scene.cpp" />
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.h" />
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\GameObject.h" />
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\MyVec2.h" />
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Scene.h" />
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
