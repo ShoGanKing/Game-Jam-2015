@@ -1,21 +1,29 @@
 1. download sfml for c++ 12 32bit
 http://www.sfml-dev.org/download/sfml/2.2/
+
 2. configuration to all configs
+
 3. project properties -> VC++ Directories -> include Directories -> edit -> browse to sfml location -> select the include folder
+
 4. project properties -> VC++ Directories -> Library Directories -> edit -> browse to sfml location -> select the lib folder... Apply
 
+
 5. configuration to debug
+
 6. project properties -> linker -> input -> additional dependencies -> edit -> 
 sfml-graphics-d.lib
 sfml-window-d.lib
 sfml-system-d.lib
 ...Apply
 
+
 7. configuration to release
+
 8. project properties -> linker -> input -> additional dependencies -> edit -> 
 sfml-graphics.lib
 sfml-window.lib
 sfml-system.lib
 ...Apply
+
 
 go to the bin folder in sfml and copy all the dlls into your project's working directory
