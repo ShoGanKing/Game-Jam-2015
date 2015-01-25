@@ -35,6 +35,7 @@ private:
     bool m_IsMovingDown;
     bool m_IsMovingLeft;
     bool m_IsMovingRight;
+    bool m_IsDown;
 
     int m_numMash;
     int m_timer;
