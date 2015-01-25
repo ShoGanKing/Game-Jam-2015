@@ -3,6 +3,7 @@
 #include"ActiveGameObject.h"
 #include"StaticObject.h"
 #include"ButtonObject.h"
+#include"BIRDS.h"
 
 
 TimingGameDDR::TimingGameDDR(SceneManager* aManager) : Scene(aManager),
@@ -63,9 +64,14 @@ void TimingGameDDR::SetIsActive(bool aActive)
 
 bool TimingGameDDR::Load()
 {
-    m_Background = new StaticObject( this, 255, 255, 255 );
+    m_Background = new StaticObject( this, 255,255,255 );
+
     m_Background->Load();
 
+    m_Background->MyTexture()->loadFromFile("../../../Assets/Backgrounds/Images/GrassAndSky.png");
+
+
+    m_Objects.push_back(new BirdObject(this, MyVec2(1200.0f, 150.0f)));
 
     //Static Objects Here
 
@@ -133,6 +139,8 @@ void TimingGameDDR::Update(sf::Time aDelta)
 
 void TimingGameDDR::Draw()
 {
+    m_Background->Draw();
+
     if (!m_Objects.empty())
     {
         for (int i = 0; i < m_Objects.size(); i++)
@@ -156,6 +164,7 @@ void TimingGameDDR::Draw()
             m_TargetKeys[i]->Draw();
         }
     }
+
 }
 
 void TimingGameDDR::HandleInputEvent(Input_Events aEvent)

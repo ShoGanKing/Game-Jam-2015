@@ -15,6 +15,8 @@ StaticObject::StaticObject(Scene* aScene, int aColour1, int aColour2, int aColou
 {
     m_Scene = aScene;
 
+    m_Active = true;
+
     m_Window = m_Scene->GetWindow();
 
     m_Sprite.setRotation(m_Angle);
@@ -30,7 +32,7 @@ StaticObject::~StaticObject()
 
 bool StaticObject::Load()
 {
-    if (!m_Texture.loadFromFile("../../../Assets/Models/Vivi.png")) // ./ current directory, ../ back one
+    if (!m_Texture.loadFromFile("../../../Assets/Backgrounds/Images/GrassAndSky.png")) // ./ current directory, ../ back one
     {
         // Handle Loading Error
         m_Texture.loadFromFile("../../../Assets/Models/Missing.png");

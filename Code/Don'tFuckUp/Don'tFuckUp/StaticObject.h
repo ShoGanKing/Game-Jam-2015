@@ -20,6 +20,8 @@ public:
 
     sf::Sprite* MySprite(){ return &m_Sprite; }
 
+    sf::Texture* MyTexture() { return &m_Texture; }
+
 private:
 
     Scene* m_Scene;
