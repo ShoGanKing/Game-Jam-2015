@@ -16,6 +16,8 @@ Coordination::Coordination() : m_Window(sf::VideoMode(1600, 900),
     m_Text(),
     m_TimerText(),
     m_Button1(),
+    m_Button2(),
+    m_PointsText(),
     m_IsMovingDown(false),
     m_IsMovingUp(false),
     m_IsMovingLeft(false),
@@ -24,7 +26,8 @@ Coordination::Coordination() : m_Window(sf::VideoMode(1600, 900),
     m_RandomNum1(0),
     m_RandomNum2(0),
     m_Points1(0),
-    m_Points2(0)
+    m_Points2(0),
+    m_IsGameOver(false)
 {
     if (!m_Texture.loadFromFile("../../../Assets/Models/Vivi.png")) // ./ current directory, ../ back one
     {
@@ -53,6 +56,10 @@ Coordination::Coordination() : m_Window(sf::VideoMode(1600, 900),
     m_Button2.setFont(m_Font);
     m_Button2.setCharacterSize(150);
     m_Button2.setPosition(800, 0);
+
+    m_PointsText.setFont(m_Font);
+    m_PointsText.setCharacterSize(150);
+    m_PointsText.setPosition(500, 700);
 
     m_RandomNum1 = random(1, 4);
     m_RandomNum2 = random(5, 8);
@@ -102,7 +109,11 @@ void Coordination::ProcessEvents() // Input()
 void Coordination::Update(sf::Time aDelta)
 {
     //WASD buttons
-    if (m_RandomNum1 == PRESS_W)
+    if (m_Points1 >= 4)
+    {
+        m_Button1.setString(" ");
+    }
+    else if (m_RandomNum1 == PRESS_W)
     {
         m_Button1.setString("Press W");
     }
@@ -119,7 +130,11 @@ void Coordination::Update(sf::Time aDelta)
         m_Button1.setString("Press D");
     }
     //Arrow buttons
-    if (m_RandomNum2 == PRESSUP)
+    if (m_Points2 >= 4)
+    {
+        m_Button2.setString(" ");
+    }
+    else if (m_RandomNum2 == PRESSUP)
     {
         m_Button2.setString("Press Up");
     }
@@ -154,27 +169,37 @@ void Coordination::Update(sf::Time aDelta)
         movement.x += PLAYER_SPEED;
     }
 
-    if (m_Timer != 0)
+    if (m_Timer != 0 && m_IsGameOver == false)
     {
         m_Timer--;
 
         if (m_Points1 >= 4 && m_Points2 >= 4)
         {
             m_Text.setString("You win");
+            m_IsGameOver = true;
         }
         else if (m_Timer == 0)
         {
             m_Text.setString("You lose");
+            m_IsGameOver = true;
         }
     }
 
     stringstream tt;
 
-    tt << m_Timer;
+    tt << (m_Timer + 59)/60;
 
     string std = tt.str();
 
     m_TimerText.setString(std);
+
+    stringstream ss;
+
+    ss << m_Points1 << " / 4           " << m_Points2 << " / 4";
+
+    string str = ss.str();
+
+    m_PointsText.setString(str);
 
     m_Player.move(movement * aDelta.asSeconds());
 } // end of Update(sf::Time aDelta)
@@ -187,108 +212,128 @@ void Coordination::Render() // Draw()
     m_Window.draw(m_TimerText);
     m_Window.draw(m_Button1);
     m_Window.draw(m_Button2);
+    m_Window.draw(m_PointsText);
     m_Window.display();
 } // end of Render()
 
 void Coordination::HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
 {
-    //WASD keys
-    if (aKey == sf::Keyboard::W && aIsPressed == true)
+    if (m_IsGameOver == false)
     {
-        if (m_RandomNum1 == PRESS_W)
+        //WASD keys
+        if (m_Points1 >= 4)
         {
-            m_Points1++;
+
         }
-        else
+        else if (aKey == sf::Keyboard::W && aIsPressed == true)
         {
-            m_Text.setString("You lose");
+            if (m_RandomNum1 == PRESS_W)
+            {
+                m_Points1++;
+            }
+            else
+            {
+                m_Text.setString("You lose");
+                m_IsGameOver = true;
+            }
+            m_RandomNum1 = random(1, 4);
         }
-        m_RandomNum1 = random(1, 4);
-    }
-    else if (aKey == sf::Keyboard::S && aIsPressed == true)
-    {
-        if (m_RandomNum1 == PRESS_S)
+        else if (aKey == sf::Keyboard::S && aIsPressed == true)
         {
-            m_Points1++;
+            if (m_RandomNum1 == PRESS_S)
+            {
+                m_Points1++;
+            }
+            else
+            {
+                m_Text.setString("You lose");
+                m_IsGameOver = true;
+            }
+            m_RandomNum1 = random(1, 4);
         }
-        else
+        else if (aKey == sf::Keyboard::A && aIsPressed == true)
         {
-            m_Text.setString("You lose");
+            if (m_RandomNum1 == PRESS_A)
+            {
+                m_Points1++;
+            }
+            else
+            {
+                m_Text.setString("You lose");
+                m_IsGameOver = true;
+            }
+            m_RandomNum1 = random(1, 4);
         }
-        m_RandomNum1 = random(1, 4);
-    }
-    else if (aKey == sf::Keyboard::A && aIsPressed == true)
-    {
-        if (m_RandomNum1 == PRESS_A)
+        else if (aKey == sf::Keyboard::D && aIsPressed == true)
         {
-            m_Points1++;
+            if (m_RandomNum1 == PRESS_D)
+            {
+                m_Points1++;
+            }
+            else
+            {
+                m_Text.setString("You lose");
+                m_IsGameOver = true;
+            }
+            m_RandomNum1 = random(1, 4);
         }
-        else
+        //Arrow keys
+        if (m_Points2 >= 4)
         {
-            m_Text.setString("You lose");
+
         }
-        m_RandomNum1 = random(1, 4);
-    }
-    else if (aKey == sf::Keyboard::D && aIsPressed == true)
-    {
-        if (m_RandomNum1 == PRESS_D)
+        else if (aKey == sf::Keyboard::Up && aIsPressed == true)
         {
-            m_Points1++;
+            if (m_RandomNum2 == PRESSUP)
+            {
+                m_Points2++;
+            }
+            else
+            {
+                m_Text.setString("You lose");
+                m_IsGameOver = true;
+            }
+            m_RandomNum2 = random(5, 8);
         }
-        else
+        else if (aKey == sf::Keyboard::Down && aIsPressed == true)
         {
-            m_Text.setString("You lose");
+            if (m_RandomNum2 == PRESSDOWN)
+            {
+                m_Points2++;
+            }
+            else
+            {
+                m_Text.setString("You lose");
+                m_IsGameOver = true;
+            }
+            m_RandomNum2 = random(5, 8);
         }
-        m_RandomNum1 = random(1, 4);
-    }
-    //Arrow keys
-    else if (aKey == sf::Keyboard::Up && aIsPressed == true)
-    {
-        if (m_RandomNum2 == PRESSUP)
+        else if (aKey == sf::Keyboard::Left && aIsPressed == true)
         {
-            m_Points2++;
+            if (m_RandomNum2 == PRESSLEFT)
+            {
+                m_Points2++;
+            }
+            else
+            {
+                m_Text.setString("You lose");
+                m_IsGameOver = true;
+            }
+            m_RandomNum2 = random(5, 8);
         }
-        else
+        else if (aKey == sf::Keyboard::Right && aIsPressed == true)
         {
-            m_Text.setString("You lose");
+            if (m_RandomNum2 == PRESSRIGHT)
+            {
+                m_Points2++;
+            }
+            else
+            {
+                m_Text.setString("You lose");
+                m_IsGameOver = true;
+            }
+            m_RandomNum2 = random(5, 8);
         }
-        m_RandomNum2 = random(5, 8);
-    }
-    else if (aKey == sf::Keyboard::Down && aIsPressed == true)
-    {
-        if (m_RandomNum2 == PRESSDOWN)
-        {
-            m_Points2++;
-        }
-        else
-        {
-            m_Text.setString("You lose");
-        }
-        m_RandomNum2 = random(5, 8);
-    }
-    else if (aKey == sf::Keyboard::Left && aIsPressed == true)
-    {
-        if (m_RandomNum2 == PRESSLEFT)
-        {
-            m_Points2++;
-        }
-        else
-        {
-            m_Text.setString("You lose");
-        }
-        m_RandomNum2 = random(5, 8);
-    }
-    else if (aKey == sf::Keyboard::Right && aIsPressed == true)
-    {
-        if (m_RandomNum2 == PRESSRIGHT)
-        {
-            m_Points2++;
-        }
-        else
-        {
-            m_Text.setString("You lose");
-        }
-        m_RandomNum2 = random(5, 8);
     }
 } // end of HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
 

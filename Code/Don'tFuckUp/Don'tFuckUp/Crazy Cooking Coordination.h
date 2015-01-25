@@ -42,6 +42,7 @@ private:
     sf::Text m_TimerText;
     sf::Text m_Button1;
     sf::Text m_Button2;
+    sf::Text m_PointsText;
 
     // Member Variables
     bool m_IsMovingUp;
@@ -53,6 +54,7 @@ private:
     unsigned short m_RandomNum2;
     unsigned short m_Points1;
     unsigned short m_Points2;
+    bool m_IsGameOver;
 };
 
 #endif
