@@ -17,12 +17,6 @@ GameCopy::GameCopy() : m_Window(sf::VideoMode(1600, 900), "SFML Application"),
 
     m_SceneManager->Push(tempScene);
 
-
-    m_SceneManager->Load();
-
-    m_SceneManager->Load();
-
-
 } // end of Game()
 
 GameCopy::~GameCopy()

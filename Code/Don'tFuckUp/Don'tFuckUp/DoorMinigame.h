@@ -20,12 +20,12 @@ public:
     DoorMinigame();
     void Run();
 
+    int random(int min, int max);
 private:
     void ProcessEvents();
     void Update(sf::Time delta);
     void Render();
     void HandlePlayerInput(sf::Keyboard::Key key, bool isPressed);
-    int random(int min, int max);
 
 private:
     sf::RenderWindow m_Window;

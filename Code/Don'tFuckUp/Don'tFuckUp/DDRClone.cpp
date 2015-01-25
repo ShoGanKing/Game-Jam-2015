@@ -4,6 +4,10 @@
 #include"StaticObject.h"
 #include"ButtonObject.h"
 
+
+#include"DoorMinigame.h"
+
+
 TimingGameDDR::TimingGameDDR(SceneManager* aManager) : Scene(aManager)
 {
     Load();
@@ -63,6 +67,8 @@ bool TimingGameDDR::Load()
     m_Background = new StaticObject( this, 255, 255, 255 );
     m_Background->Load();
 
+    DoorMinigame* tempRandom = new DoorMinigame();
+
 
     //Static Objects Here
 
@@ -77,16 +83,22 @@ bool TimingGameDDR::Load()
 
 
     //Keys Here
-    m_TargetKeys.push_back(new ButtonObject(Key_Down_W, this, MyVec2(100.0f, 100.0f)));
-    m_TargetKeys.push_back(new ButtonObject(Key_Down_A, this, MyVec2(250.0f, 100.0f)));
-    m_TargetKeys.push_back(new ButtonObject(Key_Down_S, this, MyVec2(400.0f, 100.0f)));
-    m_TargetKeys.push_back(new ButtonObject(Key_Down_D, this, MyVec2(550.0f, 100.0f)));
+    m_TargetKeys.push_back(new ButtonObject(Key_Down_A, this, MyVec2(116.0f, 950.0f)));
+    m_TargetKeys.push_back(new ButtonObject(Key_Down_W, this, MyVec2(266.0f, 1050.0f)));
+    m_TargetKeys.push_back(new ButtonObject(Key_Down_S, this, MyVec2(416.0f, 1150.0f)));
+    m_TargetKeys.push_back(new ButtonObject(Key_Down_D, this, MyVec2(566.0f, 850.0f)));
+
+    m_TargetKeys[0]->MySprite()->setColor(sf::Color(255, 128, 128));
+    m_TargetKeys[1]->MySprite()->setColor(sf::Color(128, 255, 128));
+    m_TargetKeys[2]->MySprite()->setColor(sf::Color(128, 128, 255));
+    m_TargetKeys[3]->MySprite()->setColor(sf::Color(255, 255, 128));
 
     if (!m_TargetKeys.empty())
     {
         for (int i = 0; i < m_TargetKeys.size(); i++)
         {
             m_TargetKeys[i]->Load();
+            m_TargetKeys[i]->SetVelocity(MyVec2(0.0f, (float) tempRandom->random(-400,-200)));
         }
     }
 
@@ -123,6 +135,10 @@ void TimingGameDDR::Update(sf::Time aDelta)
         for (int i = 0; i < m_TargetKeys.size(); i++)
         {
             m_TargetKeys[i]->Update(aDelta);
+            if (m_TargetKeys[i]->GetPosition().Y() < -100.0f)
+            {
+                m_TargetKeys[i]->SetPosition(MyVec2(m_TargetKeys[i]->GetPosition().X(), 1000.0f));
+            }
         }
     }
 
@@ -145,19 +161,19 @@ void TimingGameDDR::Draw()
         }
     }
 
-    if (!m_TargetKeys.empty())
-    {
-        for (int i = 0; i < m_TargetKeys.size(); i++)
-        {
-            m_TargetKeys[i]->Draw();
-        }
-    }
-
     if (!m_TargetArea.empty())
     {
         for (int i = 0; i < m_TargetArea.size(); i++)
         {
             m_TargetArea[i]->Draw();
+        }
+    }
+
+    if (!m_TargetKeys.empty())
+    {
+        for (int i = 0; i < m_TargetKeys.size(); i++)
+        {
+            m_TargetKeys[i]->Draw();
         }
     }
 }

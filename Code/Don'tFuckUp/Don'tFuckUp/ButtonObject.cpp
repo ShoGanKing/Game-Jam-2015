@@ -210,8 +210,8 @@ void ButtonObject::Update(sf::Time aDelta)
     MyVec2 translation(0.0f, 0.0f);
     translation.AddToMe(m_Velocity);
     translation.MultiplyMeBy(aDelta.asSeconds());
-
     m_Position.AddToMe(translation);
+    SetPosition(m_Position);
 }
 
 void ButtonObject::Draw()
