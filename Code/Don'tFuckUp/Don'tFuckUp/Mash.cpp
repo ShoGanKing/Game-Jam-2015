@@ -12,6 +12,7 @@ Mash::Mash() : m_Window(sf::VideoMode(1600, 900),
     m_IsMovingUp(false),
     m_IsMovingLeft(false),
     m_IsMovingRight(false),
+    m_IsDown(false),
     m_numMash(0),
     m_timer(240),
     m_Timer(),
@@ -158,27 +159,36 @@ void Mash::Render() // Draw()
 } // end of Render()
 
 void Mash::HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
-{
-    if (aKey == sf::Keyboard::W && aIsPressed == true)
+{     
+    if (aIsPressed == false)
     {
+        m_IsDown = false;
+    }
+    if (aKey == sf::Keyboard::W && aIsPressed == true && m_IsDown == false)
+    {
+        m_IsDown = true;
         m_IsMovingUp = aIsPressed;
         //incrementing the mashes
         m_numMash++;
     }
-    else if (aKey == sf::Keyboard::S && aIsPressed == true)
+   
+    else if (aKey == sf::Keyboard::S && aIsPressed == true && m_IsDown == false)
     {
+        m_IsDown = true;
         m_IsMovingDown = aIsPressed;
         //incrementing the mashes
         m_numMash++;
     }
-    else if (aKey == sf::Keyboard::A && aIsPressed == true)
+    else if (aKey == sf::Keyboard::A && aIsPressed == true && m_IsDown == false)
     {
+        m_IsDown = true;
         m_IsMovingLeft = aIsPressed;
         //incrementing the mashes
         m_numMash++;
     }
-    else if (aKey == sf::Keyboard::D && aIsPressed == true)
+    else if (aKey == sf::Keyboard::D && aIsPressed == true && m_IsDown == false)
     {
+        m_IsDown = true;
         m_IsMovingRight = aIsPressed;
         //incrementing the mashes
         m_numMash++;
