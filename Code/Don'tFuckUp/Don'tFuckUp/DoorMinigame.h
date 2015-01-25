@@ -5,15 +5,30 @@
 
 class DoorMinigame
 {
-    enum
+    enum Door
     {
-        RIGHTDOOR = 1, //The only right door the player can pick
-        WRONGDOOR1,    //Both of the wrong doors the player can pick
-        WRONGDOOR2     //^^
+        RIGHTDOOR = 1, //Player wins
+        FAILDOOR,    //Player loses
+        BRICKDOOR     //Player get 2nd chance
+    };
+
+    enum MinMax
+    {
+        MIN = 1,
+        MAX2,
+        MAX1
+    };
+
+    enum Keys
+    {
+        KEY_A = 1,
+        KEY_W,
+        KEY_D
     };
 
     //Constants
     const int PLAYER_SPEED = 100.0f;
+
     const sf::Time TIME_PER_FRAME = sf::seconds(1.f / 60.f);
 
 public:
@@ -33,7 +48,10 @@ private:
     sf::Sprite m_Player;
     sf::Font m_Font;
     sf::Text m_Text;
-
+    sf::Text m_Text_A;
+    sf::Text m_Text_W;
+    sf::Text m_Text_D;
+    sf::Text m_TimerText;
 
     // Member Variables
     bool m_IsMovingUp;
@@ -41,6 +59,10 @@ private:
     bool m_IsMovingLeft;
     bool m_IsMovingRight;
     int m_RandomNumber;
+    bool m_IsGameOver;
+    unsigned short m_KeyNotActive;
+    unsigned short m_Max;
+    unsigned short m_Timer;
 };
 
 #endif // DOORMINIGAME_H

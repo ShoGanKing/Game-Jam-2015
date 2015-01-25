@@ -1,5 +1,8 @@
 #include "DoorMinigame.h"
+#include <sstream>
 #include <random>
+
+using namespace std;
 
 DoorMinigame::DoorMinigame() : m_Window(sf::VideoMode(1600, 900),
     "SFML Application"),
@@ -7,13 +10,56 @@ DoorMinigame::DoorMinigame() : m_Window(sf::VideoMode(1600, 900),
     m_Player(),
     m_Font(),
     m_Text(),
+    m_Text_A(),
+    m_Text_W(),
+    m_Text_D(),
+    m_TimerText(),
     m_IsMovingDown(false),
     m_IsMovingUp(false),
     m_IsMovingLeft(false),
     m_IsMovingRight(false),
-    m_RandomNumber(0)
+    m_IsGameOver(false),
+    m_RandomNumber(0),
+    m_Max(0),
+    m_Timer(240)
 {
+    if (!m_Texture.loadFromFile("../../../Assets/Models/Vivi.png")) // ./ current directory, ../ back one
+    {
+        // Handle Loading Error
+    }
 
+    if (!m_Font.loadFromFile("../../../Assets/Arial.ttf"))
+    {
+
+    }
+
+    m_Player.setTexture(m_Texture);
+    m_Player.setPosition(100.0f, 100.0f);
+
+    m_Text.setFont(m_Font);
+    m_Text.setCharacterSize(300);
+    m_Text.setPosition(250, 300);
+
+    m_Text_A.setString("A");
+    m_Text_A.setFont(m_Font);
+    m_Text_A.setCharacterSize(300);
+    m_Text_A.setPosition(100, 0);
+
+    m_Text_W.setString("W");
+    m_Text_W.setFont(m_Font);
+    m_Text_W.setCharacterSize(300);
+    m_Text_W.setPosition(650, 0);
+
+    m_Text_D.setString("D");
+    m_Text_D.setFont(m_Font);
+    m_Text_D.setCharacterSize(300);
+    m_Text_D.setPosition(1300, 0);
+
+    m_TimerText.setFont(m_Font);
+    m_TimerText.setCharacterSize(300);
+    m_TimerText.setPosition(0, 590);
+
+    m_Max = MAX1;
 } // end of Game()
 
 void DoorMinigame::Run()
@@ -76,6 +122,27 @@ void DoorMinigame::Update(sf::Time aDelta)
         movement.x += PLAYER_SPEED;
     }
 
+    if (m_Timer != 0 && m_IsGameOver == false)
+    {
+        m_Timer--;
+
+        if (m_Timer == 0)
+        {
+            m_Text.setString("You lose");
+            m_Text_W.setString(" ");
+            m_Text_A.setString(" ");
+            m_Text_D.setString(" ");
+        }
+    }
+
+    stringstream tt;
+
+    tt << (m_Timer + 59) / 60;
+
+    string std = tt.str();
+
+    m_TimerText.setString(std);
+
     m_Player.move(movement * aDelta.asSeconds());
 } // end of Update(sf::Time aDelta)
 
@@ -84,39 +151,63 @@ void DoorMinigame::Render() // Draw()
     if (m_RandomNumber == RIGHTDOOR)
     {
         m_Text.setString("You win");
+        m_Text_W.setString(" ");
+        m_Text_A.setString(" ");
+        m_Text_D.setString(" ");
+        m_IsGameOver = true;
     }
-    else if (m_RandomNumber == WRONGDOOR1 || m_RandomNumber == WRONGDOOR2)
+    else if (m_RandomNumber == FAILDOOR)
     {
         m_Text.setString("You lose");
+        m_Text_W.setString(" ");
+        m_Text_A.setString(" ");
+        m_Text_D.setString(" ");
+        m_IsGameOver = true;
     }
-    m_Text.setFont(m_Font);
-    m_Text.setCharacterSize(300);
+    else if (m_RandomNumber == BRICKDOOR)
+    {
+        m_Text.setString("Try again quick!!");
+    }
+
     m_Window.clear();
     m_Window.draw(m_Player);
     m_Window.draw(m_Text);
+    m_Window.draw(m_Text_A);
+    m_Window.draw(m_Text_W);
+    m_Window.draw(m_Text_D);
+    m_Window.draw(m_TimerText);
     m_Window.display();
 } // end of Render()
 
 void DoorMinigame::HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
 {
-    if (aKey == sf::Keyboard::W)
+    if (m_IsGameOver == false)
     {
-        m_IsMovingUp = aIsPressed;
-        m_RandomNumber = random(1, 3);
-    }
-    else if (aKey == sf::Keyboard::S)
-    {
-        m_IsMovingDown = aIsPressed;
-    }
-    else if (aKey == sf::Keyboard::A)
-    {
-        m_IsMovingLeft = aIsPressed;
-        m_RandomNumber = random(1, 3);
-    }
-    else if (aKey == sf::Keyboard::D)
-    {
-        m_IsMovingRight = aIsPressed;
-        m_RandomNumber = random(1, 3);
+        if (aKey == sf::Keyboard::W && m_KeyNotActive != KEY_W)
+        {
+            m_RandomNumber = random(MIN, m_Max);
+            m_KeyNotActive = KEY_W;
+            m_Max = MAX2;
+            m_Text_W.setString(" ");
+        }
+        else if (aKey == sf::Keyboard::S)
+        {
+
+        }
+        else if (aKey == sf::Keyboard::A && m_KeyNotActive != KEY_A)
+        {
+            m_RandomNumber = random(MIN, m_Max);
+            m_KeyNotActive = KEY_A;
+            m_Max = MAX2;
+            m_Text_A.setString(" ");
+        }
+        else if (aKey == sf::Keyboard::D && m_KeyNotActive != KEY_D)
+        {
+            m_RandomNumber = random(MIN, m_Max);
+            m_KeyNotActive = KEY_D;
+            m_Max = MAX2;
+            m_Text_D.setString(" ");
+        }
     }
 } // end of HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
 
