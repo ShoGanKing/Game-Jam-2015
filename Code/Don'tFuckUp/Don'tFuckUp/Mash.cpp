@@ -1,10 +1,10 @@
-#include "Game.h"
+#include "Mash.h"
 #include <sstream>
 #include <random>
 
 using namespace std;
 
-Game::Game() : m_Window(sf::VideoMode(1600, 900),
+Mash::Mash() : m_Window(sf::VideoMode(1600, 900),
     "SFML Application"),
     m_Texture(),
     m_Player(),
@@ -49,7 +49,7 @@ Game::Game() : m_Window(sf::VideoMode(1600, 900),
     m_Player.setPosition(100.0f, 100.0f);
 } // end of Game()
 
-void Game::Run()
+void Mash::Run()
 {
     sf::Clock clock;
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
@@ -67,7 +67,7 @@ void Game::Run()
     }
 } // end of Run()
 
-void Game::ProcessEvents() // Input()
+void Mash::ProcessEvents() // Input()
 {
     sf::Event event;
     while (m_Window.pollEvent(event))
@@ -89,7 +89,7 @@ void Game::ProcessEvents() // Input()
     }
 } // end of ProcessEvents()
 
-void Game::Update(sf::Time aDelta)
+void Mash::Update(sf::Time aDelta)
 {
     sf::Vector2f movement(0.0f, 0.0f);
     if (m_IsMovingUp)
@@ -147,7 +147,7 @@ void Game::Update(sf::Time aDelta)
     m_Player.move(movement * aDelta.asSeconds());
 } // end of Update(sf::Time aDelta)
 
-void Game::Render() // Draw()
+void Mash::Render() // Draw()
 {
     m_Window.clear();
     m_Window.draw(m_Player);
@@ -157,7 +157,7 @@ void Game::Render() // Draw()
     m_Window.display();
 } // end of Render()
 
-void Game::HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
+void Mash::HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
 {
     if (aKey == sf::Keyboard::W && aIsPressed == true)
     {
