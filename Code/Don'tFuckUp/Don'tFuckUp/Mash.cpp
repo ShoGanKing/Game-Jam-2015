@@ -12,7 +12,11 @@ Mash::Mash() : m_Window(sf::VideoMode(1600, 900),
     m_IsMovingUp(false),
     m_IsMovingLeft(false),
     m_IsMovingRight(false),
-    m_IsDown(false),
+    m_IsDownW(false),
+    m_IsDownA(false),
+    m_IsDownS(false),
+    m_IsDownD(false),
+    m_IsGameOver(false),
     m_numMash(0),
     m_timer(240),
     m_Timer(),
@@ -126,6 +130,7 @@ void Mash::Update(sf::Time aDelta)
             {
                 m_WinLose.setString("You Win!");
             }
+            m_IsGameOver = true;
         }
     }
 
@@ -133,7 +138,7 @@ void Mash::Update(sf::Time aDelta)
     stringstream ss;
     stringstream tt;
 
-    tt << m_timer;
+    tt << (m_timer + 59)/60;
 
     string std = tt.str();
 
@@ -159,39 +164,44 @@ void Mash::Render() // Draw()
 } // end of Render()
 
 void Mash::HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
-{     
-    if (aIsPressed == false)
+{
+    if (m_IsGameOver == false)
     {
-        m_IsDown = false;
-    }
-    if (aKey == sf::Keyboard::W && aIsPressed == true && m_IsDown == false)
-    {
-        m_IsDown = true;
-        m_IsMovingUp = aIsPressed;
-        //incrementing the mashes
-        m_numMash++;
-    }
-   
-    else if (aKey == sf::Keyboard::S && aIsPressed == true && m_IsDown == false)
-    {
-        m_IsDown = true;
-        m_IsMovingDown = aIsPressed;
-        //incrementing the mashes
-        m_numMash++;
-    }
-    else if (aKey == sf::Keyboard::A && aIsPressed == true && m_IsDown == false)
-    {
-        m_IsDown = true;
-        m_IsMovingLeft = aIsPressed;
-        //incrementing the mashes
-        m_numMash++;
-    }
-    else if (aKey == sf::Keyboard::D && aIsPressed == true && m_IsDown == false)
-    {
-        m_IsDown = true;
-        m_IsMovingRight = aIsPressed;
-        //incrementing the mashes
-        m_numMash++;
+        if (aIsPressed == false)
+        {
+            m_IsDownW = false;
+            m_IsDownA = false;
+            m_IsDownS = false;
+            m_IsDownD = false;
+        }
+        if (aKey == sf::Keyboard::W && aIsPressed == true && m_IsDownW == false)
+        {
+            m_IsDownW = true;
+            m_IsMovingUp = aIsPressed;
+            //incrementing the mashes
+            m_numMash++;
+        }
+        else if (aKey == sf::Keyboard::S && aIsPressed == true && m_IsDownS == false)
+        {
+            m_IsDownS = true;
+            m_IsMovingDown = aIsPressed;
+            //incrementing the mashes
+            m_numMash++;
+        }
+        else if (aKey == sf::Keyboard::A && aIsPressed == true && m_IsDownA == false)
+        {
+            m_IsDownA = true;
+            m_IsMovingLeft = aIsPressed;
+            //incrementing the mashes
+            m_numMash++;
+        }
+        else if (aKey == sf::Keyboard::D && aIsPressed == true && m_IsDownD == false)
+        {
+            m_IsDownD = true;
+            m_IsMovingRight = aIsPressed;
+            //incrementing the mashes
+            m_numMash++;
+        }
     }
 }
 
