@@ -18,7 +18,7 @@ public:
     virtual void Update(sf::Time aDelta);
     virtual void Draw();
 
-    sf::Sprite MySprite(){ return m_Sprite; }
+    sf::Sprite* MySprite(){ return &m_Sprite; }
 
 private:
 

@@ -28,6 +28,8 @@ void SceneManager::Push(Scene* aScene)
     }
 
     m_SceneList.push_back(aScene);
+
+    m_SceneList.back()->SetIsActive(true);
 }
 
 void SceneManager::Pop(unsigned short aNumPops)

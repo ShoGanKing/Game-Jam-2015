@@ -22,7 +22,7 @@ public:
     MyVec2 GetVelocity();
     void SetVelocity(MyVec2 aVelocity);
 
-    sf::Sprite MySprite(){ return m_Sprite; }
+    sf::Sprite* MySprite(){ return &m_Sprite; }
 
 protected:
 

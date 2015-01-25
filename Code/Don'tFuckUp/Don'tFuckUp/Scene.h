@@ -39,7 +39,7 @@ public:
     ~Scene();  
 
     bool IsActive(){ return m_Active; }
-    void SetIsActive(bool aActive);
+    virtual void SetIsActive(bool aActive);
 
     void AddGameObject(GameObject* aObject);
     void RemoveGameObjectType(std::string aType);

@@ -3,19 +3,22 @@
 #include "Scene.h"
 #include "StaticObject.h"
 #include "ActiveGameObject.h"
+#include "DDRClone.h"
 
 GameCopy::GameCopy() : m_Window(sf::VideoMode(1600, 900), "SFML Application"),
     m_SceneManager(nullptr)
 {
     m_SceneManager = new SceneManager(&m_Window);
 
+    m_SceneManager = new SceneManager(&m_Window);
 
-    Scene* Scene1 = new Scene(m_SceneManager);
-    ActiveGameObject* SGO1 = new ActiveGameObject(Scene1, MyVec2(100.0f,100.0f));
-    Scene1->AddGameObject(SGO1);
-    Scene1->SetIsActive(true);
+    Scene* tempScene = new TimingGameDDR(m_SceneManager);
+    tempScene->SetIsActive(true);
 
-    m_SceneManager->Push(Scene1);
+    m_SceneManager->Push(tempScene);
+
+
+    m_SceneManager->Load();
 
     m_SceneManager->Load();
 

@@ -2,9 +2,11 @@
 #include "MyVec2.h"
 #include "Scene.h"
 
-ActiveGameObject::ActiveGameObject(Scene* aScene, MyVec2 aPos, float aAngle, MyVec2 aVelocity) : GameObject(MyVec2(100.0f, 100.0f), "Active")
+ActiveGameObject::ActiveGameObject(Scene* aScene, MyVec2 aPos, float aAngle, MyVec2 aVelocity) : GameObject(aPos, "Active", aAngle)
 {
     m_Scene = aScene;
+
+    m_Velocity = aVelocity;
 
     m_Window = m_Scene->GetWindow();
 
