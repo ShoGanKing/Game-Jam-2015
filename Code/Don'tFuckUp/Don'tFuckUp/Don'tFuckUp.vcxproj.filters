@@ -15,6 +15,7 @@
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ButtonObject.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Crazy Cooking Coordination.cpp" />
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\RealisticReactionRapture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.h" />
@@ -30,5 +31,6 @@
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ButtonObject.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Crazy Cooking Coordination.h" />
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\RealisticReactionRapture.h" />
   </ItemGroup>
 </Project>
