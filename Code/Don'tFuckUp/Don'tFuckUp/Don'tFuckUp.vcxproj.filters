@@ -1,32 +1,98 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DDRClone.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DoorMinigame.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game - Copy.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\GameObject.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Main.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Mash.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\MyVec2.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Scene.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\SceneManager.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.cpp" />
-    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ButtonObject.cpp" />
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DDRClone.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DoorMinigame.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game - Copy.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\GameObject.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Mash.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\MyVec2.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Scene.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\SceneManager.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.h" />
-    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ButtonObject.h" />
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\MyVec2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\SceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game - Copy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DoorMinigame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DDRClone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.cpp">
+=======
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Mash.cpp">
+>>>>>>> 6d2932eb77febde1631794741574fbd76f86b87f
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Crazy Cooking Coordination.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\MyVec2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\SceneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game - Copy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DoorMinigame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DDRClone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.h">
+=======
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Mash.h">
+>>>>>>> 6d2932eb77febde1631794741574fbd76f86b87f
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Crazy Cooking Coordination.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
