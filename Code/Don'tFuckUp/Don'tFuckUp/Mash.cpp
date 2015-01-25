@@ -1,9 +1,10 @@
-#include "Mash.h"
+#include "Game.h"
 #include <sstream>
+#include <random>
 
 using namespace std;
 
-Mash::Mash() : m_Window(sf::VideoMode(1600, 900),
+Game::Game() : m_Window(sf::VideoMode(1600, 900),
     "SFML Application"),
     m_Texture(),
     m_Player(),
@@ -48,7 +49,7 @@ Mash::Mash() : m_Window(sf::VideoMode(1600, 900),
     m_Player.setPosition(100.0f, 100.0f);
 } // end of Game()
 
-void Mash::Run()
+void Game::Run()
 {
     sf::Clock clock;
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
@@ -66,7 +67,7 @@ void Mash::Run()
     }
 } // end of Run()
 
-void Mash::ProcessEvents() // Input()
+void Game::ProcessEvents() // Input()
 {
     sf::Event event;
     while (m_Window.pollEvent(event))
@@ -75,8 +76,6 @@ void Mash::ProcessEvents() // Input()
         {
         case sf::Event::KeyPressed:
             HandlePlayerInput(event.key.code, true);
-            //incrementing the mashes
-            m_numMash++;
             break;
         case sf::Event::KeyReleased:
             HandlePlayerInput(event.key.code, false);
@@ -90,7 +89,7 @@ void Mash::ProcessEvents() // Input()
     }
 } // end of ProcessEvents()
 
-void Mash::Update(sf::Time aDelta)
+void Game::Update(sf::Time aDelta)
 {
     sf::Vector2f movement(0.0f, 0.0f);
     if (m_IsMovingUp)
@@ -148,7 +147,7 @@ void Mash::Update(sf::Time aDelta)
     m_Player.move(movement * aDelta.asSeconds());
 } // end of Update(sf::Time aDelta)
 
-void Mash::Render() // Draw()
+void Game::Render() // Draw()
 {
     m_Window.clear();
     m_Window.draw(m_Player);
@@ -158,23 +157,31 @@ void Mash::Render() // Draw()
     m_Window.display();
 } // end of Render()
 
-void Mash::HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
+void Game::HandlePlayerInput(sf::Keyboard::Key aKey, bool aIsPressed)
 {
-    if (aKey == sf::Keyboard::W)
+    if (aKey == sf::Keyboard::W && aIsPressed == true)
     {
         m_IsMovingUp = aIsPressed;
+        //incrementing the mashes
+        m_numMash++;
     }
-    else if (aKey == sf::Keyboard::S)
+    else if (aKey == sf::Keyboard::S && aIsPressed == true)
     {
         m_IsMovingDown = aIsPressed;
+        //incrementing the mashes
+        m_numMash++;
     }
-    else if (aKey == sf::Keyboard::A)
+    else if (aKey == sf::Keyboard::A && aIsPressed == true)
     {
         m_IsMovingLeft = aIsPressed;
+        //incrementing the mashes
+        m_numMash++;
     }
-    else if (aKey == sf::Keyboard::D)
+    else if (aKey == sf::Keyboard::D && aIsPressed == true)
     {
         m_IsMovingRight = aIsPressed;
+        //incrementing the mashes
+        m_numMash++;
     }
 }
 
