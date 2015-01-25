@@ -52,6 +52,9 @@
 >>>>>>> 6d2932eb77febde1631794741574fbd76f86b87f
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Crazy Cooking Coordination.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.h">
@@ -86,6 +89,9 @@
 =======
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Mash.h">
 >>>>>>> 6d2932eb77febde1631794741574fbd76f86b87f
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Crazy Cooking Coordination.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

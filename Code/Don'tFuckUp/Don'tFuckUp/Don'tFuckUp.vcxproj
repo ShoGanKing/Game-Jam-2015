@@ -73,8 +73,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+<<<<<<< .mine
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Crazy Cooking Coordination.cpp" />
+=======
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DDRClone.cpp" />
+>>>>>>> .r30
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DoorMinigame.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game - Copy.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.cpp" />
@@ -87,8 +91,12 @@
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\StaticObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< .mine
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Crazy Cooking Coordination.h" />
+=======
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DDRClone.h" />
+>>>>>>> .r30
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\DoorMinigame.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game - Copy.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Game.h" />
