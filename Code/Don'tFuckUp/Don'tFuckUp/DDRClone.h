@@ -25,6 +25,16 @@ public:
 
 protected:
 
+    void HitPlayer();
+    void HitEnemy();
+
+    void Reset();
+
+    void LoadAssets();
+
+    unsigned short m_Misses;
+    unsigned short m_Hits;
+
     StaticObject* m_Background;
 
     std::vector<ButtonObject*> m_TargetArea;
