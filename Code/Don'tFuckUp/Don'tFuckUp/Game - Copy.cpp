@@ -4,6 +4,7 @@
 #include "StaticObject.h"
 #include "ActiveGameObject.h"
 #include "DDRClone.h"
+#include "Opening.h"
 
 GameCopy::GameCopy() : m_Window(sf::VideoMode(1600, 900), "SFML Application"),
     m_SceneManager(nullptr)
@@ -16,6 +17,8 @@ GameCopy::GameCopy() : m_Window(sf::VideoMode(1600, 900), "SFML Application"),
     tempScene->SetIsActive(true);
 
     m_SceneManager->Push(tempScene);
+
+    m_SceneManager->Push(new Opening(m_SceneManager));
 
 } // end of Game()
 
