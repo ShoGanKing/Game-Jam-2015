@@ -18,6 +18,7 @@
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\RealisticReactionRapture.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\BIRDS.cpp" />
     <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Opening.cpp" />
+    <ClCompile Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Clouds.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\ActiveGameObject.h" />
@@ -36,5 +37,6 @@
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\RealisticReactionRapture.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\BIRDS.h" />
     <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Opening.h" />
+    <ClInclude Include="..\..\Don%27tFuckUp\Don%27tFuckUp\Clouds.h" />
   </ItemGroup>
 </Project>

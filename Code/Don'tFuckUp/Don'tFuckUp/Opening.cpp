@@ -4,6 +4,7 @@
 #include"StaticObject.h"
 #include"ButtonObject.h"
 #include"BIRDS.h"
+#include"Clouds.h"
 
 
 Opening::Opening(SceneManager* aManager) : Scene(aManager)
@@ -33,9 +34,21 @@ bool Opening::Load()
 
     m_Background->Load();
 
-    m_Background->MyTexture()->loadFromFile("../../../Assets/Backgrounds/Images/GrassAndSky.png");
+    m_Background->MyTexture()->loadFromFile("../../../Assets/Backgrounds/Images/GroundGrassyAndSky.png");
 
-
+    //Clouds
+    m_Objects.push_back(new CloudObject(this, MyVec2(800.0f, 50.0f), 0.0f, MyVec2(-30.0f, 0.0f)));
+    m_Objects.push_back(new CloudObject(this, MyVec2(600.0f, 150.0f), 0.0f, MyVec2(-15.0f, 0.0f)));
+    m_Objects.push_back(new CloudObject(this, MyVec2(300.0f, 80.0f), 0.0f, MyVec2(-25.0f, 0.0f)));
+    m_Objects.push_back(new CloudObject(this, MyVec2(1200.0f, 120.0f), 0.0f, MyVec2(-20.0f, 0.0f)));
+    m_Objects.push_back(new CloudObject(this, MyVec2(1800.0f, 50.0f), 0.0f, MyVec2(-35.0f, 0.0f)));
+    m_Objects.push_back(new CloudObject(this, MyVec2(1800.0f, 50.0f), 0.0f, MyVec2(-30.0f, 0.0f)));
+    m_Objects.push_back(new CloudObject(this, MyVec2(1600.0f, 150.0f), 0.0f, MyVec2(-15.0f, 0.0f)));
+    m_Objects.push_back(new CloudObject(this, MyVec2(1300.0f, 80.0f), 0.0f, MyVec2(-25.0f, 0.0f)));
+    m_Objects.push_back(new CloudObject(this, MyVec2(2200.0f, 120.0f), 0.0f, MyVec2(-20.0f, 0.0f)));
+    m_Objects.push_back(new CloudObject(this, MyVec2(2800.0f, 50.0f), 0.0f, MyVec2(-35.0f, 0.0f)));
+    
+    // Birds
     m_Objects.push_back(new BirdObject(this, MyVec2(-800.0f, 50.0f), 0.0f, MyVec2(200.0f,0.0f)));
     m_Objects.push_back(new BirdObject(this, MyVec2(-200.0f, 150.0f), 0.0f, MyVec2(190.0f, 0.0f)));
     m_Objects.push_back(new BirdObject(this, MyVec2(-600.0f, 100.0f), 0.0f, MyVec2(180.0f, 0.0f)));
